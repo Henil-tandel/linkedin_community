@@ -11,7 +11,12 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:3000",
+        "https://linkedin-community-e7w8.vercel.app"
+    ]
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
