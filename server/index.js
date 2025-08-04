@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the LinkedIn Clone API');
+    res.send({ activeStatus: true, error: false });
 });
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
