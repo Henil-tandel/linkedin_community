@@ -12,10 +12,9 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: [
-        "http://localhost:3000",
-        "https://linkedin-community-e7w8.vercel.app"
-    ]
+  origin: ['https://linkedin-community-e7w8-lfsavhsjr.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
 }));
 app.use(express.json());
 
