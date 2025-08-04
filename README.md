@@ -1,15 +1,14 @@
-# Blog Editor App
+# LinkedIn Community Clone
 
-A full-stack MERN blog editor application that allows users to register, log in, write, save drafts, and publish blog posts. Built with React, Node.js, Express, and MongoDB.
+A full-stack MERN application inspired by LinkedIn, allowing users to register, log in, create posts, view profiles, and edit their information. Built with React, Node.js, Express, and MongoDB.
 
 ---
 
 ## Features
 
 - User authentication (register & login)
-- Create, edit, and delete blog posts
-- Save drafts and publish blogs
-- View all your blogs (drafts & published)
+- Create, edit, and delete posts
+- View your own and other users' profiles
 - Responsive UI with Tailwind CSS
 - Protected routes for authenticated users
 
@@ -18,7 +17,7 @@ A full-stack MERN blog editor application that allows users to register, log in,
 ## Project Structure
 
 ```
-blog-editor-app/
+linkedin_community/
 │
 ├── client/           # React frontend
 │   ├── public/
@@ -59,8 +58,8 @@ blog-editor-app/
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/your-username/blog-editor-app.git
-cd blog-editor-app
+git clone https://github.com/your-username/linkedin_community.git
+cd linkedin_community
 ```
 
 ### 2. Setup the Backend
@@ -106,34 +105,19 @@ npm install
 ## Usage
 
 - Register a new account or log in.
-- Create a new blog, save as draft, or publish.
-- View, edit, and manage your blogs from the dashboard.
+- Create new posts and view the feed.
+- Edit your profile and view other users' profiles.
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** React, React Router, Tailwind CSS, Axios, React Toastify
+- **Frontend:** React, React Router, Tailwind CSS
 - **Backend:** Node.js, Express, MongoDB, Mongoose, JWT, bcryptjs
 - **Authentication:** JWT-based, protected routes
 
 ---
 
-## Scripts
-
-### Backend
-
-- `npm start` — Start the server
-- `npx nodemon index.js` — Start server with auto-reload
-
-### Frontend
-
-- `npm start` — Start the React app
-- `npm run build` — Build for production
-- `npm test` — Run tests
-
----
-
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT

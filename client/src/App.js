@@ -1,51 +1,59 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import BlogEditorPage from './pages/BlogEditorPage';
-import AllBlogsPage from './pages/AllBlogsPage';
-import BlogDetail from './pages/BlogDetail';
-import ProtectedRoute from './components/ProtectedRoute';
-import Navbar from './components/Navbar';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './index.css'; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Onboard from "./pages/Onboard";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import EditProfile from "./pages/EditProfile";
+import OtherUserProfile from "./pages/OtherUserProfile";
+import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute"; // ✅ import
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Navbar />
-      <ToastContainer />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        {/* Public Routes */}
+        <Route path="/" element={<Onboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Protected Routes */}
         <Route
-          path="/editor/:id?"
+          path="/home"
           element={
             <ProtectedRoute>
-              <BlogEditorPage />
+              <Home />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/blogs"
+          path="/profile"
           element={
             <ProtectedRoute>
-              <AllBlogsPage />
+              <Profile />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/blogs/:id"
+          path="/edit-profile"
           element={
             <ProtectedRoute>
-              <BlogDetail />
+              <EditProfile />
             </ProtectedRoute>
-          }/>
+          }
+        />
+        <Route
+          path="/profile/:id"
+          element={
+            <ProtectedRoute>
+              <OtherUserProfile />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
+
   );
 }
-
-export default App;

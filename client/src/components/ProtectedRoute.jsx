@@ -1,8 +1,12 @@
-import { Navigate } from 'react-router-dom';
-import { isAuthenticated } from '../utils/auth';
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const ProtectedRoute = ({ children }) => {
-  return isAuthenticated() ? children : <Navigate to="/login" />;
-};
+export default function ProtectedRoute({ children }) {
+  const { isAuthenticated } = useAuth();
 
-export default ProtectedRoute;
+  if (!isAuthenticated) {
+    return <Navigate to="/" replace />; // Redirect to Onboard if not logged in
+  }
+
+  return children; // Render the page if authenticated
+}
