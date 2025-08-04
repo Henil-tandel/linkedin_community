@@ -15,7 +15,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfileAndPosts = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/auth/profile`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -27,7 +27,7 @@ export default function Profile() {
         setUser(data.user);
 
         const postRes = await fetch(
-          `http://localhost:5000/api/posts?author=${data.user._id}`,
+          `${process.env.REACT_APP_API_URL}/posts?author=${data.user._id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

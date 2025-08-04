@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/posts", {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +33,7 @@ export default function Home() {
     if (newPost.trim() === "") return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/posts", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

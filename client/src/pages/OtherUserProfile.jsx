@@ -14,7 +14,7 @@ export default function OtherUserProfile() {
   useEffect(() => {
     const fetchUserAndPosts = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/auth/${id}`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
