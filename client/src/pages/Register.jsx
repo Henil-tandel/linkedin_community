@@ -110,9 +110,9 @@ export default function Register() {
 
           <p className="text-xs text-gray-500">
             By clicking Agree & Join, you agree to the LinkedIn{" "}
-            <a href="#" className="text-blue-600 underline">User Agreement</a>,{" "}
-            <a href="#" className="text-blue-600 underline">Privacy Policy</a>, and{" "}
-            <a href="#" className="text-blue-600 underline">Cookie Policy</a>.
+            <a href="/" className="text-blue-600 underline">User Agreement</a>,{" "}
+            <a href="/" className="text-blue-600 underline">Privacy Policy</a>, and{" "}
+            <a href="/" className="text-blue-600 underline">Cookie Policy</a>.
           </p>
 
           <button
