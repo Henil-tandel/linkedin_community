@@ -133,7 +133,7 @@ export default function Register() {
 
       <p className="mt-6 text-sm text-gray-500 text-center">
         Looking to create a page for a business?{" "}
-        <a href="#" className="text-blue-600 underline">Get help</a>
+        <a href="/" className="text-blue-600 underline">Get help</a>
       </p>
     </div>
   );
